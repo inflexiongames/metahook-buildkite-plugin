@@ -1,2 +1,5 @@
 #!/bin/bash
-python "${BASH_SOURCE%/*}/../python/setup-hooks.py"
+
+script_folder="$(dirname -- "$(readlink -f "${BASH_SOURCE}")")"
+plugin_root="$(dirname ${script_folder})"
+python "${plugin_root}/python/setup-hooks.py"
